@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body onload="displayResult()">
+        <div id="container"></div>
+    </body>
+
+    <script>
+        function loadXMLDoc(path){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", path, false);
+            xhttp.send("");
+            return xhttp.responseXML;
+        }
+
+        function displayResult(){
+            var xhttp = new XMLHttpRequest();
+            var xml = loadXMLDoc("books.xml");
+            var xsl = loadXMLDoc("books.xsl");
+            // code for IE
+            if (window.ActiveXObject || xhttp.responseType == "msxml-document")
+            {
+                ex = xml.transformNode(xsl);
+                document.getElementById("container").innerHTML = ex;
+            }
+            // code for Chrome, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument)
+            {
+                xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+                resultDocument = xsltProcessor.transformToFragment(xml, document);
+                document.getElementById("container").appendChild(resultDocument);
+            }
+            
+        }
+    </script>
+</html>

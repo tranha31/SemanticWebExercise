@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<curriculum>
+    <course>
+        <name>Web ngữ nghĩa</name>
+        <english-name>Semantic Web</english-name>
+        <credit>3</credit>
+        <semester>9</semester>
+    </course>
+    <course>
+        <name>Nhập môn AI</name>
+        <english-name>Artificial Intelligence</english-name>
+        <credit>3</credit>
+        <semester>5</semester>
+    </course>
+    <course>
+        <name>An toàn thông tin</name>
+        <english-name>Safety Information</english-name>
+        <credit>3</credit>
+        <semester>6</semester>
+    </course>
+    <course>
+        <name>Thuật toán ứng dụng</name>
+        <english-name>Application Algorithm</english-name>
+        <credit>3</credit>
+        <semester>9</semester>
+    </course>
+</curriculum>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 5</title>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script>
+        var x;
+        fetch('./person.json')
+        .then(res=>res.json())
+        .then(json=>{
+            x = json;
+            console.log(x);
+            console.log(x["@context"]);
+            var txt = "";
+            txt += "<h2>"+x["name"]+"</h2> <br/>";
+            txt += "<p>"+x["gender"]+"</p> <br/>";
+            txt += "<p>"+x["birthDate"]+"</p> <br/>";
+            txt += "<p>"+x["address"]["addressLocality"]+"</p> <br/>";
+
+            document.getElementById("container").innerHTML = txt;
+            
+        })
+        
+    </script>
+</html>
